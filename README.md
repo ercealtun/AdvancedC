@@ -1,2 +1,2 @@
 # AdvancedC
- Advanced C topics including codes & lecture
+ Advanced C topics including codes & lectures

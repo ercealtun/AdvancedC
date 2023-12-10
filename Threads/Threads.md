@@ -24,7 +24,7 @@ to write
 
 - Threads share memory across each thread by having the same address space (unlike multi-processes)
     * Two threads have access to the same set of variables and can alter each other's variable values
-        => If one thread changes a global variable, all of the other threads will see the change immediately
+        * If one thread changes a global variable, all of the other threads will see the change immediately
 
 - Threads also share OS resources like open files and signals
     * All of the threads will all be able to read and write to the same files and talk on the same network sockets

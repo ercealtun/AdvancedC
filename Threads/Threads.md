@@ -131,7 +131,7 @@ to write
     - Once created, threads are peers, and may create other threads
     - There is no implied hierarchy or dependency between threads
 
-#### pthread_create
+### pthread_create
 
 int pthread_create(pthread_t* thread, const pthread_attr_t* attr, void*(* start_routine)(void*), void* arg);
 
@@ -152,7 +152,7 @@ int pthread_create(pthread_t* thread, const pthread_attr_t* attr, void*(* start_
     - NULL may be used if no argument is to be passed
     - To pass multiple arguments, you would need to use a pointer to a structure
 
-#### pthread_join
+### pthread_join
 
 - It is often useful to be able to identify when a thread has completed or exited
 
@@ -178,7 +178,7 @@ int pthread_join(pthread_t thread, void **value_ptr);,
 
 - If the 2nd argument is not NULL, this value is passed to pthread_exit() by the terminating thread
 
-#### pthread_exit
+### pthread_exit
 
 - Threads can be terminated in a number of ways
     - By explicitly calling pthread_exit

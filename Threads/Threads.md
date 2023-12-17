@@ -133,7 +133,7 @@ to write
 
 #### pthread_create
 
-int pthread_create(pthread_t *thread, const pthread_attr_t *attr, void*(*start_routine)(void*), void* arg);
+<int pthread_create(pthread_t *thread, const pthread_attr_t *attr, void*(*start_routine)(void*), void* arg);
 
 - pthread_create() takes 4 arguments
 
@@ -172,7 +172,7 @@ int pthread_create(pthread_t *thread, const pthread_attr_t *attr, void*(*start_r
 - Thew pthread_join() also receives the return value of your thread function and stores it in a void pointer variable
     - Once both threads have finished, your program can exit smoothly
 
-int pthread_join(pthread_t thread, void **value_ptr);,
+<int pthread_join(pthread_t thread, void **value_ptr);,
 
 - The 1st argument is the thread id of the thread you want to wait for
 
@@ -193,7 +193,7 @@ int pthread_join(pthread_t thread, void **value_ptr);,
 - Although not explicitly required to call pthread_exit() at the end of the thread function
     - It is good practice to do so, as you may have the need to return some arbitrary data back to the caller via pthread_join()
 
-void pthread_exit(void *value_ptr);
+<void pthread_exit(void *value_ptr);
 
 -  The first argument makes the value_ptr available to any successful join with the terminating thread
 

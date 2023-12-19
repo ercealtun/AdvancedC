@@ -1,13 +1,13 @@
 # THREADS
 
-## Overview
+# Overview
 
 - Programs often need to do several things at the same time.
 - Games need to update the graphics on the screen while also reading input from a game controller.
 - Chat programs will need to read text from the network and send data to the network at the same time.
 - Media players will need to stream video to the display as well as watch for input from the user controls
 
-## Threads
+# Threads
 
 - You need something that starts a separate task quickly, can share all of your current data, and will not require a lot of code
 to write
@@ -29,7 +29,7 @@ to write
 - Threads also share OS resources like open files and signals
     - All of the threads will all be able to read and write to the same files and talk on the same network sockets
 
-### Multi-threading
+## Multi-threading
 
 - Threads are popular way to improve an application through parallelism (simultaneous running of code)
     - Several tasks can execute concurrently (many tasks can run in any order and possibly in parallel)
@@ -47,7 +47,7 @@ to write
     - In a browser, multiple tabs can be different threads
     - MS word uses multiple threads, one thread to format the text, other thread to process inputs, etc.
 
-### Advantages of using threads
+## Advantages of using threads
 
 - Threads require less overhead than "forking" or spawning a new process
     - The system does not initialize a new system virtual memory space and environment
@@ -59,7 +59,7 @@ to write
     - Faster context switching
     - Faster termination of a thread
 
-### Disadvantages of using threads
+## Disadvantages of using threads
 
 - Very easy to overlook the consequences of interactions between concurrently executing threads
     - Considerable potential for very obscure errors in your code
@@ -75,7 +75,7 @@ to write
     - You will have inconsistent data
 
 
-### POSIX thread (pthread) libraries
+## POSIX thread (pthread) libraries
 
 - The POSIX thread libraries are a standards base thread API for C/C++
     - Allow one to spawn a new concurrent process flow
@@ -90,7 +90,7 @@ to write
 
 - pthread functions are defined in a pthread.h header/include file and implemented in a thread library
 
-### pthreads API
+## pthreads API
 
 - The functions that comprise the pthreads API can be grouped into 3 major categories
 
@@ -114,7 +114,7 @@ to write
     - Data management
     - Process interaction
 
-### Creating a thread
+## Creating a thread
 
 - The lifecycle of a thread, much like a process, begins with creation
     - Threads are not forked from a parent to create a child
@@ -131,7 +131,7 @@ to write
     - Once created, threads are peers, and may create other threads
     - There is no implied hierarchy or dependency between threads
 
-### pthread_create
+## pthread_create
 
 int pthread_create(pthread_t* thread, const pthread_attr_t* attr, void*(* start_routine)(void*), void* arg);
 
@@ -152,7 +152,7 @@ int pthread_create(pthread_t* thread, const pthread_attr_t* attr, void*(* start_
     - NULL may be used if no argument is to be passed
     - To pass multiple arguments, you would need to use a pointer to a structure
 
-### pthread_join
+## pthread_join
 
 - It is often useful to be able to identify when a thread has completed or exited
 
@@ -178,7 +178,7 @@ int pthread_join(pthread_t thread, void **value_ptr);,
 
 - If the 2nd argument is not NULL, this value is passed to pthread_exit() by the terminating thread
 
-### pthread_exit
+## pthread_exit
 
 - Threads can be terminated in a number of ways
     - By explicitly calling pthread_exit
